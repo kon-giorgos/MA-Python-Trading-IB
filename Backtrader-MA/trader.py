@@ -7,8 +7,8 @@ cerebro = bt.Cerebro()
 # Create a Data Feed
 data = bt.feeds.YahooFinanceCSVData(
     dataname='orcl.csv',
-    fromdate=datetime.datetime(1995, 1, 3),
-    todate=datetime.datetime(1999, 1,20),
+    fromdate=datetime.datetime(1995, 1, 1),
+    todate=datetime.datetime(1999, 1,1),
     reverse=False)
 
 # Add the Data Feed to Cerebro
@@ -18,8 +18,8 @@ cerebro.adddata(data)
 cerebro.broker.setcash(1000)
 
 # Add a strategy
-cerebro.addstrategy(CrossoverMA)
-# cerebro.addstrategy(BuyAndHold)
+# cerebro.addstrategy(CrossoverMA)
+cerebro.addstrategy(BuyAndHold)
 
 print('Start Portfolio Value: %.2f' % cerebro.broker.getvalue()) # the value is the cash (liquidity) + the invested value
 

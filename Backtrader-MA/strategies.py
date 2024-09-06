@@ -103,7 +103,8 @@ class BuyAndHold(bt.Strategy):
 
     def next(self):
         # Buy all the available cash
-        size = int(self.broker.get_cash() / self.dataclose[0])
+        
+        size = int(self.broker.get_cash()*0.98 / self.dataclose[0])
         self.buy(size=size)
 
 
