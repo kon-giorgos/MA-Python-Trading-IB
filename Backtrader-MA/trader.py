@@ -2,6 +2,7 @@ import datetime
 import backtrader as bt
 from strategies import *
 
+
 cerebro = bt.Cerebro()
 
 # Create a Data Feed
